@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SorobanRpc, Asset, Horizon } from '@stellar/stellar-sdk';
+import { Horizon } from '@stellar/stellar-sdk';
 
 const HORIZON_URL = import.meta.env.VITE_HORIZON_URL ?? 'https://horizon-testnet.stellar.org';
 

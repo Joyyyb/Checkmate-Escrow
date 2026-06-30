@@ -1313,6 +1313,15 @@ impl EscrowContract {
             .unwrap_or(false)
     }
 
+    /// Returns true if the allowlist is currently enforced (i.e. at least one token has been added).
+    pub fn is_allowlist_enforced(env: Env) -> bool {
+        extend_instance_ttl(&env);
+        env.storage()
+            .instance()
+            .get(&DataKey::AllowlistEnforced)
+            .unwrap_or(false)
+    }
+
     /// Returns true if the contract has been initialized.
     pub fn is_initialized(env: Env) -> bool {
         extend_instance_ttl(&env);

@@ -14,7 +14,7 @@ ALLOWLIST=$(grep -rh "pub fn " \
   | grep -oP 'pub fn \K[a-z_]+' | sort -u)
 
 # SDK / CLI / Rust stdlib calls that are not contract functions — skip these
-EXCLUDE="require_auth|from_str|to_string|cost_estimate|invoke_contract|call_contract|contract_initialized|current_caller|require_player|mock_all_auths|register_contract|setup_with_funded_match"
+EXCLUDE="require_auth|from_str|to_string|cost_estimate|invoke_contract|call_contract|contract_initialized|current_caller|require_player|mock_all_auths|register_contract|setup_with_funded_match|as_millis|as_ref|create_client|fetch_game|fetch_with_backoff|from_millis|is_ok|is_some|new_with_result|ok_or|platform_name|validate_game_id|verify_game_result|get_snapshot"
 
 # Docs to scan
 DOCS=$(find "$REPO_ROOT/docs" "$REPO_ROOT/demo" -name "*.md"; echo "$REPO_ROOT/README.md")
